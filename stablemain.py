@@ -49,7 +49,7 @@ random.shuffle(video_urls)
 random.shuffle(audio_urls)
 random.shuffle(website_urls)
 
-chunk_size = 1 * 1024 * 1024    # 1 MB per part
+chunk_size = 0.02 * 1024 * 1024    # 1 MB per part
 
 
 def download_in_chunks(url, part_size=1024*1024):
@@ -124,5 +124,6 @@ t1.start()
 while True:
     for item in video_urls:
         download_in_chunks(item, chunk_size)
+
 
 
