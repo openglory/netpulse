@@ -43,7 +43,10 @@ website_urls = [
         ]
 
 
-
+try: 
+    video_urls = website_urls + video_urls
+except: 
+    None
 
 random.shuffle(video_urls)
 random.shuffle(audio_urls)
@@ -124,6 +127,7 @@ t1.start()
 while True:
     for item in video_urls:
         download_in_chunks(item, chunk_size)
+
 
 
 
